@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Computer Engineering</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --brand-primary: #1e3a8a;
+            --brand-secondary: #0d9488;
+            --brand-dark: #0f172a;
+            --brand-light: #f8fafc;
+            --card-border: #e2e8f0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            color: #334155;
+            background-color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar */
+        .dept-navbar {
+            background: #ffffff;
+            border-bottom: 1px solid var(--card-border);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--brand-primary) !important;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Hero */
+        .hero-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #0d9488 100%);
+            color: #ffffff;
+            padding: 70px 0;
+        }
+        .hero-badge {
+            background: rgba(255,255,255,0.18);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: #ffffff;
+            font-size: 0.85rem;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Stat Counter Cards */
+        .stat-card {
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+        }
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--brand-primary);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: #64748b;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        /* Section Headers */
+        .section-title {
+            font-weight: 800;
+            color: var(--brand-dark);
+            margin-bottom: 8px;
+            position: relative;
+        }
+        .section-subtitle {
+            color: #64748b;
+            font-size: 1rem;
+            margin-bottom: 35px;
+        }
+
+        /* Faculty Cards */
+        .faculty-card {
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+            transition: all 0.2s ease;
+        }
+        .faculty-card:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+        }
+        .faculty-avatar {
+            width: 72px;
+            height: 72px;
+            background: #e0e7ff;
+            color: var(--brand-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 14px;
+        }
+
+        /* Lab Cards */
+        .lab-card {
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 24px;
+            height: 100%;
+            transition: all 0.2s ease;
+        }
+        .lab-card:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+            border-color: #cbd5e1;
+        }
+        .lab-icon {
+            width: 44px;
+            height: 44px;
+            background: #e0f2fe;
+            color: #0284c7;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 14px;
+        }
+
+        /* Table styling */
+        .custom-table {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--card-border);
+        }
+        .custom-table thead {
+            background-color: #f1f5f9;
+            color: var(--brand-dark);
+            font-weight: 600;
+        }
+
+        /* Recruiter tags */
+        .recruiter-badge {
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+            color: #334155;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--brand-dark);
+            color: #94a3b8;
+            padding: 40px 0 25px;
+        }
+        footer a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg dept-navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-cpu-fill text-primary"></i>
+                <span>Computer Engineering</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" href="#faculty">Faculty</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#laboratories">Laboratories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#syllabus">Syllabus</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#placements">Placements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+    <header class="hero-section text-center">
+        <div class="container">
+            <span class="hero-badge mb-3">
+                <i class="bi bi-award-fill"></i> NBA Accredited | Established 1998
+            </span>
+            <h1 class="display-5 fw-bold mb-3">Department of Computer Engineering</h1>
+            <p class="lead col-lg-8 mx-auto mb-4 text-white-50">
+                Empowering future-ready engineers with sound algorithmic fundamentals, industry-aligned technical competence, research excellence, and ethical leadership.
+            </p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="#syllabus" class="btn btn-light fw-semibold px-4 py-2">
+                    <i class="bi bi-journal-code me-1"></i> View Syllabus
+                </a>
+                <a href="#placements" class="btn btn-outline-light fw-semibold px-4 py-2">
+                    <i class="bi bi-graph-up-arrow me-1"></i> Placement Stats
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= KEY STATS ================= -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-number">24+</div>
+                        <p class="stat-label">Faculty Members</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-number">8</div>
+                        <p class="stat-label">Advanced Labs</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-number">96.4%</div>
+                        <p class="stat-label">Placement Rate (2024)</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-number">₹44.5 L</div>
+                        <p class="stat-label">Highest Package</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FACULTY MEMBERS ================= -->
+    <section id="faculty" class="py-5 bg-white border-top border-bottom">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Faculty Members</h2>
+                <p class="section-subtitle">Dedicated educators, researchers, and domain experts guiding our students</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Faculty 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="faculty-card p-4 text-center">
+                        <div class="faculty-avatar">RS</div>
+                        <h5 class="fw-bold mb-1">Dr. Rajesh Sharma</h5>
+                        <div class="text-primary fw-semibold small mb-2">Professor &amp; Head of Dept.</div>
+                        <p class="text-muted small mb-2">Ph.D. in Computer Science (IIT Bombay)</p>
+                        <span class="badge bg-light text-dark border mb-3">Distributed Systems &amp; Cloud</span>
+                        <div class="small text-muted"><i class="bi bi-envelope me-1"></i>hod.comp@college.edu</div>
+                    </div>
+                </div>
+
+                <!-- Faculty 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="faculty-card p-4 text-center">
+                        <div class="faculty-avatar">AK</div>
+                        <h5 class="fw-bold mb-1">Dr. Anita Kulkarni</h5>
+                        <div class="text-primary fw-semibold small mb-2">Professor</div>
+                        <p class="text-muted small mb-2">Ph.D. in AI &amp; Soft Computing</p>
+                        <span class="badge bg-light text-dark border mb-3">Machine Learning &amp; NLP</span>
+                        <div class="small text-muted"><i class="bi bi-envelope me-1"></i>anita.k@college.edu</div>
+                    </div>
+                </div>
+
+                <!-- Faculty 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="faculty-card p-4 text-center">
+                        <div class="faculty-avatar">VM</div>
+                        <h5 class="fw-bold mb-1">Prof. Vikram Mehta</h5>
+                        <div class="text-primary fw-semibold small mb-2">Associate Professor</div>
+                        <p class="text-muted small mb-2">M.Tech (Network Security)</p>
+                        <span class="badge bg-light text-dark border mb-3">Cybersecurity &amp; Cryptography</span>
+                        <div class="small text-muted"><i class="bi bi-envelope me-1"></i>vikram.m@college.edu</div>
+                    </div>
+                </div>
+
+                <!-- Faculty 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="faculty-card p-4 text-center">
+                        <div class="faculty-avatar">PS</div>
+                        <h5 class="fw-bold mb-1">Dr. Priya Sawant</h5>
+                        <div class="text-primary fw-semibold small mb-2">Assistant Professor</div>
+                        <p class="text-muted small mb-2">Ph.D. in Data Engineering</p>
+                        <span class="badge bg-light text-dark border mb-3">Big Data &amp; Web Mining</span>
+                        <div class="small text-muted"><i class="bi bi-envelope me-1"></i>priya.s@college.edu</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= LABORATORIES ================= -->
+    <section id="laboratories" class="py-5">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Department Laboratories</h2>
+                <p class="section-subtitle">State-of-the-art computing facilities equipped with high-performance hardware and software</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="lab-card">
+                        <div class="lab-icon"><i class="bi bi-robot"></i></div>
+                        <h5 class="fw-bold mb-2">AI &amp; Deep Learning Lab</h5>
+                        <p class="text-muted small mb-3">Configured for training neural networks, computer vision, and NLP research experiments.</p>
+                        <ul class="list-unstyled small text-muted mb-0">
+                            <li><i class="bi bi-check2 text-success me-1"></i> <strong>Equipment:</strong> Nvidia RTX 4090 Workstations</li>
+                            <li><i class="bi bi-check2 text-success me-1"></i> <strong>Software:</strong> PyTorch, TensorFlow, CUDA</li>
+                            <li><i class="bi bi-check2 text-success me-1"></i> <strong>Capacity:</strong> 35 Workstations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="lab-card">
+                        <div class="lab-icon"><i class="bi bi-shield-lock-fill"></i></div>
+                        <h5 class="fw-bold mb-2">Cybersecurity &amp; Forensics Lab</h5>
+                        <p class="text-muted small mb-3">Dedicated sandboxed environment for network traffic auditing, ethical hacking, and vulnerability testing.</p>
+                        <ul class="list-unstyled small text-muted mb-0">
+                            <li><i class="bi bi-check2 text-success me-1"></i> <strong>Equipment:</strong> Isolated GigE VLAN, Kali rigs</li>
+                            <li><i class="bi bi-check2 text-success me-1"></i> <strong>Software:</strong> Wireshark, Metasploit, Snort</li>
+                            <li><i class="bi bi-check2 text-success me-1"></i> <strong>Capacity:</strong> 35 Workstations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="lab-card">
+                        <div class="lab-icon"><i class="bi bi-cloud-check-fill"></i></div>
+                        <h5 class="fw-bold mb-2">Cloud &amp; Distributed Systems Lab</h5>
+                        <p class="text-muted small mb-3">Hands-on microservices orchestration, containerization, and distributed database experiments.</p>
+                        <ul class="list-unstyled small text-muted mb-0">
+                            <li><i class="bi bi-check2 text-success me-1"></i> <strong>Equipment:</strong> Local Kubernetes cluster server</li>
+                            <li><i class="bi bi-check2 text-success me-1"></i> <strong>Software:</strong> Docker, K8s, OpenStack</li>
+                            <li><i class="bi bi-check2 text-success me-1"></i> <strong>Capacity:</strong> 40 Workstations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="lab-card">
+                        <div class="lab-icon"><i class="bi bi-code-slash"></i></div>
+                        <h5 class="fw-bold mb-2">Software Development Lab</h5>
+                        <p class="text-muted small mb-3">Focused on Web Technologies, Full Stack frameworks, mobile applications, and Agile development.</p>
+                        <ul class="list-unstyled small text-muted mb-0">
+                            <li><i class="bi bi-check2 text-success me-1"></i> <strong>Equipment:</strong> Core i7 Systems, Dual Displays</li>
+                            <li><i class="bi bi-check2 text-success me-1"></i> <strong>Software:</strong> VS Code, Node.js, PostgreSQL</li>
+                            <li><i class="bi bi-check2 text-success me-1"></i> <strong>Capacity:</strong> 40 Workstations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="lab-card">
+                        <div class="lab-icon"><i class="bi bi-hdd-network-fill"></i></div>
+                        <h5 class="fw-bold mb-2">Database &amp; Big Data Lab</h5>
+                        <p class="text-muted small mb-3">High-speed data querying, data warehousing, Hadoop ecosystems, and analytics pipelines.</p>
+                        <ul class="list-unstyled small text-muted mb-0">
+                            <li><i class="bi bi-check2 text-success me-1"></i> <strong>Equipment:</strong> High-RAM Dell Precision units</li>
+                            <li><i class="bi bi-check2 text-success me-1"></i> <strong>Software:</strong> Oracle 21c, MongoDB, Apache Spark</li>
+                            <li><i class="bi bi-check2 text-success me-1"></i> <strong>Capacity:</strong> 35 Workstations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="lab-card">
+                        <div class="lab-icon"><i class="bi bi-lightbulb-fill"></i></div>
+                        <h5 class="fw-bold mb-2">Project &amp; Innovation Lab</h5>
+                        <p class="text-muted small mb-3">Open 24x7 for final-year capstone projects, hackathon prototypes, and startup incubator teams.</p>
+                        <ul class="list-unstyled small text-muted mb-0">
+                            <li><i class="bi bi-check2 text-success me-1"></i> <strong>Equipment:</strong> Raspberry Pi, IoT kits, 3D Printer</li>
+                            <li><i class="bi bi-check2 text-success me-1"></i> <strong>Software:</strong> Embedded IDEs, Git server</li>
+                            <li><i class="bi bi-check2 text-success me-1"></i> <strong>Capacity:</strong> 30 Workstations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SYLLABUS ================= -->
+    <section id="syllabus" class="py-5 bg-white border-top border-bottom">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Curriculum &amp; Syllabus</h2>
+                <p class="section-subtitle">Outcome-based engineering curriculum aligned with ACM/IEEE guidelines and industry demands</p>
+            </div>
+
+            <div class="table-responsive custom-table shadow-sm">
+                <table class="table table-hover align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="width: 15%;">Semester</th>
+                            <th scope="col" style="width: 50%;">Core Courses &amp; Laboratories</th>
+                            <th scope="col" style="width: 20%;">Key Focus Area</th>
+                            <th scope="col" class="text-center" style="width: 15%;">Credits</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-bold text-primary">Semester III</td>
+                            <td>Data Structures, Discrete Mathematics, Digital Logic, OOP with Java</td>
+                            <td><span class="badge bg-secondary-subtle text-secondary-emphasis">Foundations</span></td>
+                            <td class="text-center fw-semibold">23</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold text-primary">Semester IV</td>
+                            <td>Design &amp; Analysis of Algorithms, Operating Systems, Database Management Systems</td>
+                            <td><span class="badge bg-secondary-subtle text-secondary-emphasis">Core Systems</span></td>
+                            <td class="text-center fw-semibold">24</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold text-primary">Semester V</td>
+                            <td>Computer Networks, Software Engineering, Theory of Computation, Web Technology</td>
+                            <td><span class="badge bg-secondary-subtle text-secondary-emphasis">Networking &amp; Web</span></td>
+                            <td class="text-center fw-semibold">22</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold text-primary">Semester VI</td>
+                            <td>System Programming &amp; Compiler Design, Cryptography &amp; Security, Machine Learning</td>
+                            <td><span class="badge bg-secondary-subtle text-secondary-emphasis">AI &amp; Security</span></td>
+                            <td class="text-center fw-semibold">23</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold text-primary">Semester VII</td>
+                            <td>Cloud Computing, Big Data Analytics, Deep Learning Elective, Capstone Phase I</td>
+                            <td><span class="badge bg-secondary-subtle text-secondary-emphasis">Applied Cloud &amp; AI</span></td>
+                            <td class="text-center fw-semibold">20</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold text-primary">Semester VIII</td>
+                            <td>Distributed Computing, High Performance Computing, Capstone Phase II &amp; Internship</td>
+                            <td><span class="badge bg-secondary-subtle text-secondary-emphasis">Industry Capstone</span></td>
+                            <td class="text-center fw-semibold">18</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="#syllabus" class="btn btn-outline-primary">
+                    <i class="bi bi-file-earmark-arrow-down me-1"></i> Download Complete Detailed Scheme (PDF)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ACHIEVEMENTS ================= -->
+    <section id="achievements" class="py-5">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Department Achievements</h2>
+                <p class="section-subtitle">Excellence across national hackathons, research publications, and entrepreneurial milestones</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center">
+                        <div class="text-warning display-5 mb-2"><i class="bi bi-trophy-fill"></i></div>
+                        <h5 class="fw-bold">Smart India Hackathon</h5>
+                        <p class="text-muted small">1st Prize winners at national level Grand Finale 2023 with a cash award of ₹1,00,000 for AI healthcare solution.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center">
+                        <div class="text-primary display-5 mb-2"><i class="bi bi-journal-text"></i></div>
+                        <h5 class="fw-bold">48+ Research Papers</h5>
+                        <p class="text-muted small">Faculty and students co-authored Scopus/IEEE indexed papers in 2023-24 focusing on Computer Vision and LLMs.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center">
+                        <div class="text-success display-5 mb-2"><i class="bi bi-patch-check-fill"></i></div>
+                        <h5 class="fw-bold">6 Patents Granted</h5>
+                        <p class="text-muted small">Six published patents in IoT edge devices and encrypted distributed database query processing.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center">
+                        <div class="text-info display-5 mb-2"><i class="bi bi-rocket-takeoff-fill"></i></div>
+                        <h5 class="fw-bold">4 Student Startups</h5>
+                        <p class="text-muted small">Incubated in campus Innovation Cell with seed capital funding for AI automation &amp; EdTech products.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PLACEMENT STATISTICS ================= -->
+    <section id="placements" class="py-5 bg-white border-top border-bottom">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Placement Statistics</h2>
+                <p class="section-subtitle">Consistent track record of campus placements with leading tech firms and multinational organizations</p>
+            </div>
+
+            <!-- Metric Cards -->
+            <div class="row g-4 mb-4">
+                <div class="col-md-3">
+                    <div class="p-3 bg-light rounded text-center border">
+                        <div class="text-success fs-3 fw-bold">96.4%</div>
+                        <div class="text-muted small">Placement Percentage</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-3 bg-light rounded text-center border">
+                        <div class="text-primary fs-3 fw-bold">₹44.5 LPA</div>
+                        <div class="text-muted small">Highest Salary Package</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-3 bg-light rounded text-center border">
+                        <div class="text-info fs-3 fw-bold">₹10.8 LPA</div>
+                        <div class="text-muted small">Average Salary Package</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-3 bg-light rounded text-center border">
+                        <div class="text-warning fs-3 fw-bold">85+</div>
+                        <div class="text-muted small">Visiting Companies</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Placement Year Comparison Table -->
+            <div class="table-responsive custom-table shadow-sm mb-4">
+                <table class="table table-hover align-middle mb-0 text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-start ps-3">Academic Year</th>
+                            <th scope="col">Eligible Students</th>
+                            <th scope="col">Offers Made</th>
+                            <th scope="col">Placement %</th>
+                            <th scope="col">Highest Package</th>
+                            <th scope="col">Average Package</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-start ps-3 fw-bold text-primary">2023 - 2024</td>
+                            <td>168</td>
+                            <td>212</td>
+                            <td><span class="badge bg-success">96.4%</span></td>
+                            <td class="fw-semibold">₹44.5 LPA</td>
+                            <td>₹10.8 LPA</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start ps-3 fw-bold text-primary">2022 - 2023</td>
+                            <td>160</td>
+                            <td>198</td>
+                            <td><span class="badge bg-success">95.0%</span></td>
+                            <td class="fw-semibold">₹42.0 LPA</td>
+                            <td>₹9.6 LPA</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start ps-3 fw-bold text-primary">2021 - 2022</td>
+                            <td>155</td>
+                            <td>185</td>
+                            <td><span class="badge bg-success">94.2%</span></td>
+                            <td class="fw-semibold">₹38.5 LPA</td>
+                            <td>₹8.9 LPA</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Top Recruiters -->
+            <div class="mt-4 text-center">
+                <h6 class="fw-bold text-uppercase text-muted mb-3" style="letter-spacing: 1px;">Top Hiring Partners</h6>
+                <div class="d-flex flex-wrap justify-content-center gap-2">
+                    <span class="recruiter-badge"><i class="bi bi-building"></i> Google</span>
+                    <span class="recruiter-badge"><i class="bi bi-building"></i> Microsoft</span>
+                    <span class="recruiter-badge"><i class="bi bi-building"></i> Amazon</span>
+                    <span class="recruiter-badge"><i class="bi bi-building"></i> Barclays</span>
+                    <span class="recruiter-badge"><i class="bi bi-building"></i> Morgan Stanley</span>
+                    <span class="recruiter-badge"><i class="bi bi-building"></i> JP Morgan Chase</span>
+                    <span class="recruiter-badge"><i class="bi bi-building"></i> TCS Digital</span>
+                    <span class="recruiter-badge"><i class="bi bi-building"></i> Infosys</span>
+                    <span class="recruiter-badge"><i class="bi bi-building"></i> Accenture</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Contact Department</h2>
+                    <p class="text-muted mb-4">Have queries regarding admission, faculty research collaborations, or campus placements? Reach out to us.</p>
+                    <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+                        <li class="d-flex align-items-start gap-3">
+                            <i class="bi bi-geo-alt-fill text-primary fs-5 mt-1"></i>
+                            <div>
+                                <strong>Department Office:</strong><br>
+                                3rd Floor, Engineering Block A, College Campus, Mumbai - 400001
+                            </div>
+                        </li>
+                        <li class="d-flex align-items-center gap-3">
+                            <i class="bi bi-telephone-fill text-primary fs-5"></i>
+                            <div><strong>Phone:</strong> +91 22 2345 6789</div>
+                        </li>
+                        <li class="d-flex align-items-center gap-3">
+                            <i class="bi bi-envelope-fill text-primary fs-5"></i>
+                            <div><strong>Email:</strong> comp.dept@college.edu</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card p-4 border-0 shadow-sm rounded-4">
+                        <h5 class="fw-bold mb-3">Department Query Form</h5>
+                        <form onsubmit="event.preventDefault(); alert('Query submitted successfully!');">
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold">Your Name</label>
+                                <input type="text" class="form-control" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold">Email Address</label>
+                                <input type="email" class="form-control" placeholder="name@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold">Query Category</label>
+                                <select class="form-select">
+                                    <option>Curriculum &amp; Syllabus</option>
+                                    <option>Laboratories &amp; Research</option>
+                                    <option>Placement &amp; Internships</option>
+                                    <option>General Academic Enquiry</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold">Message</label>
+                                <textarea class="form-control" rows="3" placeholder="Write your message here..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 fw-semibold">Submit Inquiry</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="container text-center">
+            <p class="mb-2 text-white fw-bold">Department of Computer Engineering</p>
+            <p class="small text-muted mb-0">&copy; 2026 College Department Website. All rights reserved. Built for EXP-11 Review Question.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
