@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Shah — Software Engineer</title>
+    <meta name="description" content="Portfolio and resume of Aditya Shah — software engineer building backend systems, real-time platforms, and AI pipelines. Navi Mumbai, India.">
+    <meta name="author" content="Aditya Shah">
+
+    <!-- Favicon (inline, no extra file) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2317181c'/%3E%3Ctext x='32' y='43' font-family='Arial,Helvetica,sans-serif' font-size='26' font-weight='700' fill='%23fafafa' text-anchor='middle'%3EAS%3C/text%3E%3C/svg%3E">
+
+    <!-- Set theme before first paint so there is no flash -->
+    <script>
+    (function () {
+        try {
+            var theme = localStorage.getItem('theme');
+            if (theme !== 'light' && theme !== 'dark') {
+                theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-bs-theme', theme);
+        } catch (e) { /* storage unavailable — keep the default */ }
+    })();
+    </script>
+    <meta name="theme-color" id="metaThemeColor" content="#fafafa">
+
+    <!-- Typography: Schibsted Grotesk (display + body), Fragment Mono (labels & dates) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Site styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ============ Navigation ============ -->
+    <nav class="navbar sticky-top site-nav" aria-label="Primary">
+        <div class="container">
+
+            <a class="navbar-brand site-brand" href="#about">Aditya Shah</a>
+
+            <!-- Desktop links -->
+            <ul class="site-links d-none d-lg-flex mb-0">
+                <li><a class="nav-link" data-spy-link href="#about">About</a></li>
+                <li><a class="nav-link" data-spy-link href="#objective">Objective</a></li>
+                <li><a class="nav-link" data-spy-link href="#experience">Experience</a></li>
+                <li><a class="nav-link" data-spy-link href="#education">Education</a></li>
+                <li><a class="nav-link" data-spy-link href="#skills">Skills</a></li>
+                <li><a class="nav-link" data-spy-link href="#projects">Projects</a></li>
+                <li><a class="nav-link" data-spy-link href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+                    <i class="icon-moon" data-lucide="moon"></i>
+                    <i class="icon-sun" data-lucide="sun"></i>
+                </button>
+
+                <a class="btn-ink btn-sm-nav no-print" href="resume.pdf" download="Aditya_Shah_Resume.pdf">
+                    <i data-lucide="download"></i><span>Resume</span>
+                </a>
+
+                <button class="nav-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="icon-menu" data-lucide="menu"></i>
+                    <i class="icon-close" data-lucide="x"></i>
+                </button>
+            </div>
+
+            <!-- Mobile menu -->
+            <div class="collapse mobile-menu d-lg-none" id="mobileMenu">
+                <ul>
+                    <li><a data-spy-link href="#about">About</a></li>
+                    <li><a data-spy-link href="#objective">Objective</a></li>
+                    <li><a data-spy-link href="#experience">Experience</a></li>
+                    <li><a data-spy-link href="#education">Education</a></li>
+                    <li><a data-spy-link href="#skills">Skills</a></li>
+                    <li><a data-spy-link href="#projects">Projects</a></li>
+                    <li><a data-spy-link href="#certifications">Certifications</a></li>
+                    <li><a data-spy-link href="#achievements">Achievements</a></li>
+                    <li><a data-spy-link href="#contact">Contact</a></li>
+                </ul>
+                <a class="btn-ink" href="resume.pdf" download="Aditya_Shah_Resume.pdf">
+                    <i data-lucide="download"></i><span>Download Resume</span>
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <main id="main">
+
+        <!-- ============ Hero / Profile ============ -->
+        <section id="about" class="hero">
+            <div class="container">
+                <div class="row gy-5 align-items-center">
+
+                    <div class="col-lg-7">
+                        <h1 class="hero-name">Aditya&nbsp;Shah</h1>
+                        <p class="hero-intro">
+                            Software engineer building backend systems, real-time platforms, and AI pipelines
+                            in <strong>Node.js, TypeScript, Go, and Python</strong>. Open to engineering
+                            roles and internships.
+                        </p>
+
+                        <div class="hero-actions">
+                            <a class="btn-ink" href="resume.pdf" download="Aditya_Shah_Resume.pdf">
+                                <i data-lucide="download"></i><span>Download Résumé</span>
+                            </a>
+                            <a class="btn-quiet" href="#contact">Get in touch</a>
+                        </div>
+
+                        <ul class="hero-meta">
+                            <li><a href="mailto:adityashah2701.work@gmail.com"><i data-lucide="mail"></i>adityashah2701.work@gmail.com</a></li>
+                            <li><a href="https://github.com/adityashah2701" target="_blank" rel="noopener noreferrer"><i data-lucide="github"></i>github.com/adityashah2701</a></li>
+                            <li><a href="https://linkedin.com/in/adityashah2701" target="_blank" rel="noopener noreferrer"><i data-lucide="linkedin"></i>linkedin.com/in/adityashah2701</a></li>
+                            <li><a href="https://adityashah27.dev" target="_blank" rel="noopener noreferrer"><i data-lucide="globe"></i>adityashah27.dev</a></li>
+                            <li><span><i data-lucide="map-pin"></i>Navi Mumbai, IN</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 offset-lg-1">
+                        <figure class="hero-photo mb-0">
+                            <!-- Placeholder portrait — replace profile.jpg with your own photograph (update the alt text too). -->
+                            <img src="profile.jpg" alt="Portrait of Aditya Shah (placeholder image — replace profile.jpg)" width="800" height="1000">
+                            <figcaption><span>Aditya Shah</span><span>Navi Mumbai · UTC+05:30</span></figcaption>
+                        </figure>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ Career Objective ============ -->
+        <section id="objective" class="section">
+            <div class="container">
+                <header class="section-head">
+                    <span class="section-index" aria-hidden="true">01</span>
+                    <h2>Career Objective</h2>
+                    <span class="section-note">The short version</span>
+                </header>
+                <p class="objective-statement">
+                    Build production-grade backend and real-time systems while learning fast from
+                    experienced engineers.
+                </p>
+            </div>
+        </section>
+
+        <!-- ============ Experience ============ -->
+        <section id="experience" class="section">
+            <div class="container">
+                <header class="section-head">
+                    <span class="section-index" aria-hidden="true">02</span>
+                    <h2>Experience</h2>
+                    <span class="section-note">Internships · 2025–26</span>
+                </header>
+
+                <article class="entry">
+                    <div class="entry-when">
+                        <span>Jun 2025 – Feb 2026</span>
+                        <span class="entry-loc">Mumbai, MH</span>
+                    </div>
+                    <div class="entry-body">
+                        <h3>Software Engineering Intern <span class="entry-org">· Tata Advanced Systems (TASL)</span></h3>
+                        <ul class="entry-list">
+                            <li>Architected CTS-71, a naval combat training platform now used as a live-drill replacement.</li>
+                            <li>Built the stateful WebSocket engine: multi-stage scenarios, per-session isolation, auto-reconnect.</li>
+                            <li>Containerized with Docker and NGINX, cutting training deployment costs by 60–70%.</li>
+                            <li>Co-authored a peer-reviewed paper on combat training systems.</li>
+                        </ul>
+                        <p class="stack">Node.js · WebSockets · React · MongoDB · Redis · Docker · NGINX</p>
+                    </div>
+                </article>
+
+                <article class="entry">
+                    <div class="entry-when">
+                        <span>Jun 2025 – Jan 2026</span>
+                        <span class="entry-loc">Remote</span>
+                    </div>
+                    <div class="entry-body">
+                        <h3>Software Engineering Intern <span class="entry-org">· Bytefuse</span></h3>
+                        <ul class="entry-list">
+                            <li>Shipped full-stack features: versioned REST endpoints in Node.js behind React/Next.js modules.</li>
+                            <li>Added Redis caching on high-traffic routes, cutting response latency at peak load.</li>
+                            <li>Worked scoping, code reviews, and iterative delivery in a fast-moving team.</li>
+                        </ul>
+                        <p class="stack">Node.js · Next.js · React · Redis · REST APIs</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============ Education ============ -->
+        <section id="education" class="section">
+            <div class="container">
+                <header class="section-head">
+                    <span class="section-index" aria-hidden="true">03</span>
+                    <h2>Education</h2>
+                    <span class="section-note">Mumbai, IN</span>
+                </header>
+
+                <article class="entry">
+                    <div class="entry-when">
+                        <span>2026 – Present</span>
+                        <span class="entry-loc">Mumbai, MH</span>
+                    </div>
+                    <div class="entry-body">
+                        <h3>B.Tech, Computer Engineering</h3>
+                        <p class="entry-sub">Shah and Anchor Kutchhi Engineering College</p>
+                    </div>
+                </article>
+
+                <article class="entry">
+                    <div class="entry-when">
+                        <span>2023 – 2026</span>
+                        <span class="entry-loc">Mumbai, MH</span>
+                    </div>
+                    <div class="entry-body">
+                        <h3>Diploma, Computer Engineering</h3>
+                        <p class="entry-sub">Vidyalankar Polytechnic</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============ Technical Skills ============ -->
+        <section id="skills" class="section">
+            <div class="container">
+                <header class="section-head">
+                    <span class="section-index" aria-hidden="true">04</span>
+                    <h2>Technical Skills</h2>
+                    <span class="section-note">Stack &amp; tooling</span>
+                </header>
+
+                <div class="row gy-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="skill">
+                            <h3 class="skill-name">Languages</h3>
+                            <p>TypeScript · JavaScript · Python · Go · Java · C · C++ · SQL</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="skill">
+                            <h3 class="skill-name">Backend &amp; Systems</h3>
+                            <p>Node.js · Express · FastAPI · Go HTTP · WebSockets · REST · gRPC · Event-driven architecture</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="skill">
+                            <h3 class="skill-name">Frontend</h3>
+                            <p>Next.js · React · Tailwind CSS · Bootstrap 5 · HTML5 · CSS3</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="skill">
+                            <h3 class="skill-name">Databases &amp; Caching</h3>
+                            <p>PostgreSQL · MongoDB · Redis · Apache Kafka · Firebase</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="skill">
+                            <h3 class="skill-name">AI &amp; Machine Learning</h3>
+                            <p>PyTorch · TensorFlow · scikit-learn · LangChain · RAG &amp; LLM pipelines · Transformers</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="skill">
+                            <h3 class="skill-name">DevOps &amp; Cloud</h3>
+                            <p>Docker · Kubernetes · AWS · GCP · NGINX · GitHub Actions · CI/CD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ Projects ============ -->
+        <section id="projects" class="section">
+            <div class="container">
+                <header class="section-head">
+                    <span class="section-index" aria-hidden="true">05</span>
+                    <h2>Projects</h2>
+                    <span class="section-note">Selected work</span>
+                </header>
+
+                <article class="project">
+                    <span class="project-index" aria-hidden="true">01</span>
+                    <div class="project-main">
+                        <h3>CTS-71 — Naval Combat Training System <span class="project-tag">TASL Internship · 2025–26</span></h3>
+                        <p class="project-desc">
+                            An event-driven WebSocket engine carrying concurrent trainee sessions through
+                            stateful, branching mission logic, with Redis-backed instant rehydrate and
+                            per-cadet performance analytics.
+                        </p>
+                        <p class="stack">Node.js · WebSockets · React · Redis · MongoDB · Docker</p>
+                    </div>
+                    <a class="project-link" href="https://github.com/adityashah2701" target="_blank" rel="noopener noreferrer" aria-label="View CTS-71 on GitHub" title="View on GitHub">
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+                </article>
+
+                <article class="project">
+                    <span class="project-index" aria-hidden="true">02</span>
+                    <div class="project-main">
+                        <h3>Kyro — Self-Hosted PaaS <span class="project-tag">Personal Project · 2026</span></h3>
+                        <p class="project-desc">
+                            A Vercel-style deployment platform: GitHub pushes become isolated Docker builds
+                            through a Redis job queue, served by a dynamic reverse proxy.
+                        </p>
+                        <p class="stack">TypeScript · Next.js · BullMQ · Redis · Docker · PostgreSQL</p>
+                    </div>
+                    <a class="project-link" href="https://github.com/adityashah2701" target="_blank" rel="noopener noreferrer" aria-label="View Kyro on GitHub" title="View on GitHub">
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+                </article>
+
+                <article class="project">
+                    <span class="project-index" aria-hidden="true">03</span>
+                    <div class="project-main">
+                        <h3>MeetingBot — AI Meeting Intelligence <span class="project-tag">1st Place · 2026</span></h3>
+                        <p class="project-desc">
+                            Audio streams to Whisper with sub-2-second latency, feeding an LLM pipeline for
+                            transcripts, entities, and action items, synced live via SSE.
+                        </p>
+                        <p class="stack">TypeScript · Node.js · Whisper · Convex · SSE</p>
+                    </div>
+                    <a class="project-link" href="https://github.com/adityashah2701" target="_blank" rel="noopener noreferrer" aria-label="View MeetingBot on GitHub" title="View on GitHub">
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============ Certifications ============ -->
+        <section id="certifications" class="section">
+            <div class="container">
+                <header class="section-head">
+                    <span class="section-index" aria-hidden="true">06</span>
+                    <h2>Certifications</h2>
+                    <span class="section-note">Learning &amp; credentials</span>
+                </header>
+
+                <!-- ▼▼▼ PLACEHOLDER CERTIFICATIONS — replace these three entries with your real
+                     certificates (name, issuer, year). Delete or duplicate a <li> as needed. ▼▼▼ -->
+                <ul class="item-list">
+                    <li>
+                        <span class="item-icon"><i data-lucide="badge-check"></i></span>
+                        <div class="item-body">
+                            <h3>AWS Certified Cloud Practitioner</h3>
+                            <p>Amazon Web Services</p>
+                        </div>
+                        <span class="item-aside">2025</span>
+                    </li>
+                    <li>
+                        <span class="item-icon"><i data-lucide="badge-check"></i></span>
+                        <div class="item-body">
+                            <h3>Front-End Developer Professional Certificate</h3>
+                            <p>Meta · Coursera</p>
+                        </div>
+                        <span class="item-aside">2024</span>
+                    </li>
+                    <li>
+                        <span class="item-icon"><i data-lucide="badge-check"></i></span>
+                        <div class="item-body">
+                            <h3>JavaScript Algorithms and Data Structures</h3>
+                            <p>freeCodeCamp</p>
+                        </div>
+                        <span class="item-aside">2024</span>
+                    </li>
+                </ul>
+                <!-- ▲▲▲ end placeholder certifications ▲▲▲ -->
+            </div>
+        </section>
+
+        <!-- ============ Achievements ============ -->
+        <section id="achievements" class="section">
+            <div class="container">
+                <header class="section-head">
+                    <span class="section-index" aria-hidden="true">07</span>
+                    <h2>Achievements</h2>
+                    <span class="section-note">Competitions &amp; awards</span>
+                </header>
+
+                <ul class="item-list">
+                    <li>
+                        <span class="item-icon is-accent"><i data-lucide="trophy"></i></span>
+                        <div class="item-body">
+                            <h3>1st Place — Industrial Hackathon 2026</h3>
+                            <p>Built MeetingBot in a 24-hour, multi-company engineering challenge.</p>
+                        </div>
+                        <span class="item-aside">2026</span>
+                    </li>
+                    <li>
+                        <span class="item-icon"><i data-lucide="medal"></i></span>
+                        <div class="item-body">
+                            <h3>1st Place — Internal Hackathon 2025</h3>
+                            <p>Built Samadhan, first among 70+ teams.</p>
+                        </div>
+                        <span class="item-aside">2025</span>
+                    </li>
+                    <li>
+                        <span class="item-icon"><i data-lucide="award"></i></span>
+                        <div class="item-body">
+                            <h3>National Hackathon Circuit</h3>
+                            <p>SPIT Hackathon 2025 · InnovGenius Ideathon (TCS) · Recursion 6.0 · CodeCrafterz 2.0</p>
+                        </div>
+                        <span class="item-aside">Ongoing</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============ Contact ============ -->
+        <section id="contact" class="section section-contact">
+            <div class="container">
+                <header class="section-head">
+                    <span class="section-index" aria-hidden="true">08</span>
+                    <h2>Contact</h2>
+                    <span class="section-note">Reach out</span>
+                </header>
+
+                <h3 class="contact-title">Let&rsquo;s build something.</h3>
+                <p class="contact-sub">
+                    Open to software engineering roles, internships, and interesting systems problems.
+                </p>
+
+                <a class="contact-email" href="mailto:adityashah2701.work@gmail.com">
+                    adityashah2701.work@gmail.com<i data-lucide="arrow-up-right"></i>
+                </a>
+
+                <ul class="contact-links">
+                    <li><a href="https://github.com/adityashah2701" target="_blank" rel="noopener noreferrer"><i data-lucide="github"></i>GitHub</a></li>
+                    <li><a href="https://linkedin.com/in/adityashah2701" target="_blank" rel="noopener noreferrer"><i data-lucide="linkedin"></i>LinkedIn</a></li>
+                    <li><a href="https://adityashah27.dev" target="_blank" rel="noopener noreferrer"><i data-lucide="globe"></i>Portfolio</a></li>
+                    <li><a href="resume.pdf" download="Aditya_Shah_Resume.pdf"><i data-lucide="download"></i>Resume&nbsp;PDF</a></li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ Footer ============ -->
+    <footer class="site-footer">
+        <div class="container">
+            <p class="foot-copy mb-0">
+                &copy; <span id="year">2026</span> Aditya Shah &nbsp;·&nbsp; Built with HTML, CSS &amp; Bootstrap 5 &nbsp;·&nbsp; Deployed on GitHub Pages
+            </p>
+            <a class="back-top" href="#about">
+                <span>Back to top</span><i data-lucide="arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 bundle (collapse, etc.) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Lucide icons -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.544.0/dist/umd/lucide.min.js"></script>
+
+    <!-- Site interactions -->
+    <script src="script.js"></script>
+</body>
+</html>
