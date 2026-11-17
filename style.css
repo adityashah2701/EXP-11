@@ -235,7 +235,8 @@ html {
 .nav-toggle[aria-expanded="true"] .icon-close { display: inline-flex; }
 
 .mobile-menu {
-    display: none; /* shown at <lg only */
+    /* Collapsed state comes from Bootstrap's .collapse:not(.show) rule;
+       hidden outright on desktop by the @media rule below. */
     border-top: 1px solid var(--hairline);
 }
 
