@@ -19,7 +19,6 @@
     --accent: #2f42dd;          /* deep cobalt — links, active, marks */
     --accent-hover: #1f2db4;
     --ink-hover: #000000;       /* solid-ink button hover (light) */
-    --bg-hover-shadow: 0 1px 2px rgb(0 0 0 / 0.05), 0 8px 20px -12px rgb(23 24 28 / 0.18);
     --font-sans: "Schibsted Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-mono: "Fragment Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 }
@@ -35,7 +34,6 @@
     --accent: #7a8bff;
     --accent-hover: #9aa6ff;
     --ink-hover: #ffffff;
-    --bg-hover-shadow: none;
 }
 
 /* Keep Bootstrap's own variables on-palette so any framework
